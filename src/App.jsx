@@ -1,39 +1,21 @@
-
 import Header from "./components/Header";
+import { HTML_RESULTS } from "./data.js";
+import { JAVA_RESULTS } from "./data.js";
+import { PYTHON_RESULTS } from "./data.js";
+import { ENGLISH_RESULTS } from "./data.js";
+import Scores from "./components/Scores.jsx";
 function App() {
   return (
     <>
       <header id="header">
         <Header />
       </header>
-
-      <main className="scores-container">
-        <div class="scores">
-          <h1>Fake Course</h1>
-
-          <table>
-            <thead>
-              <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>First name 1 </td>
-                <td>Last name 1 </td>
-                <td>55</td>
-              </tr>
-              <tr>
-                <td>First name 2 </td>
-                <td>Last name 2 </td>
-                <td>45</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </main>
+      <div className="scores-container">
+        <Scores courseName="JAVA" courseResults={JAVA_RESULTS}></Scores>
+        <Scores courseName="HTML" courseResults={HTML_RESULTS}></Scores>
+        <Scores courseName="PYTHON" courseResults={PYTHON_RESULTS}></Scores>
+        <Scores courseName="ENGLISH" courseResults={ENGLISH_RESULTS}></Scores>
+      </div>
     </>
   );
 }
